@@ -1,0 +1,78 @@
+modules:
+  mlp.com_mx:
+    prober: dns
+    dns:
+      query_name: "mlp.com"
+      query_type: "MX"
+      valid_rcodes: 
+       - NOERROR
+      validate_answer_rrs:
+        fail_if_none_matches_regexp:
+          - "mlp.com.\t.*\tIN\tMX\t.*mail10.mlp.com.*"
+          - "mlp.com.\t.*\tIN\tMX\t.*mail11.mlp.com.*"
+          - "mlp.com.\t.*\tIN\tMX\t.*mail12.mlp.com.*"
+          - "mlp.com.\t.*\tIN\tMX\t.*mail14.mlp.com.*"
+          - "mlp.com.\t.*\tIN\tMX\t.*mail21.uk.mlp.com.*"
+          - "mlp.com.\t.*\tIN\tMX\t.*mail22.uk.mlp.com.*"
+      transport_protocol: "tcp"
+      preferred_ip_protocol: "ip4"
+  mlp.com_a:
+     prober: dns
+     dns:
+       query_name: "mlp.com"
+       query_type: "A"
+       valid_rcodes:
+         - NOERROR
+       validate_answer_rrs:
+         fail_if_not_matches_regexp:
+           - "mlp.com.\t.*\tIN\tA\t174.138.224.80.*"
+       transport_protocol: "tcp"
+       preferred_ip_protocol: "ip4"
+  mlp.com_ftp:
+     prober: dns
+     dns:
+       query_name: "ftp.mlp.com"
+       query_type: "A"
+       valid_rcodes:
+         - NOERROR
+       validate_answer_rrs:
+         fail_if_not_matches_regexp:
+           - "ftp.mlp.com.\t.*\tIN\tA\t204.212.175.10.*"
+       transport_protocol: "tcp"
+       preferred_ip_protocol: "ip4"
+  mlp.com_mail:
+     prober: dns
+     dns:
+       query_name: "mail.mlp.com"
+       query_type: "A"
+       valid_rcodes:
+         - NOERROR
+       validate_answer_rrs:
+         fail_if_not_matches_regexp:
+           - "mail.mlp.com.\t.*\tIN\tA\t174.138.224.45.*"
+       transport_protocol: "tcp"
+       preferred_ip_protocol: "ip4"
+  mlp.com_www:
+     prober: dns
+     dns:
+       query_name: "www.mlp.com"
+       query_type: "CNAME"
+       valid_rcodes:
+         - NOERROR
+       validate_answer_rrs:
+         fail_if_not_matches_regexp:
+           - "www.mlp.com.\t.*\tIN\tCNAME\tx0rerydhiwd2.wpeproxy.com.*"
+       transport_protocol: "tcp"
+       preferred_ip_protocol: "ip4"
+  mlp.com_athome:
+     prober: dns
+     dns:
+       query_name: "athome.mlp.com"
+       query_type: "CNAME"
+       valid_rcodes:
+         - NOERROR
+       validate_answer_rrs:
+         fail_if_not_matches_regexp:
+           - "athome.mlp.com.\t.*\tIN\tCNAME\tathome.lb-mlp.com.*"
+       transport_protocol: "tcp"
+       preferred_ip_protocol: "ip4"
