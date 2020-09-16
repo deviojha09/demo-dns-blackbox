@@ -1,14 +1,17 @@
   - job_name: 'blackbox_dns'
     scrape_interval: 30s
     metrics_path: /probe
-    static_configs:
-     - targets:
-         - mlp.com_a:8.8.8.8
-         - mlp.com_mx:8.8.8.8
-         - mlp.com_www:8.8.8.8
-         - mlp.com_ftp:8.8.8.8
-         - mlp.com_athome:8.8.8.8
-         - mlp.com_mail:8.8.8.8
+    #static_configs:
+    # - targets:
+    #     - mlp.com_a:8.8.8.8
+    #     - mlp.com_mx:8.8.8.8
+    #     - mlp.com_www:8.8.8.8
+    #     - mlp.com_ftp:8.8.8.8
+    #     - mlp.com_athome:8.8.8.8
+    #     - mlp.com_mail:8.8.8.8
+    file_sd_configs:
+      - files:
+         - '/Users/dojha/tech/black-box/prometheus-2.21.0.darwin-amd64/mlp_dns_checks.json'
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
