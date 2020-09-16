@@ -1,0 +1,56 @@
+[
+  {
+    "labels": {
+       "domain": "mlp_mx_records"
+     },
+    "targets": [
+       "mlp.com_mx:8.8.8.8",
+       "mlp.com_mx:1.1.1.1"
+       ]
+   },
+   {
+    "labels": {
+       "domain": "mlp.com"
+     },
+    "targets": [
+       "mlp.com_a:8.8.8.8",
+       "mlp.com_a:1.1.1.1"
+       ]
+   },
+   {
+    "labels": {
+       "domain": "www.mlp.com"
+     },
+    "targets": [
+       "mlp.com_www:8.8.8.8",
+       "mlp.com_www:1.1.1.1"
+       ]
+   },
+   {
+    "labels": {
+       "domain": "ftp.mlp.com"
+     },
+    "targets": [
+       "mlp.com_ftp:8.8.8.8",
+       "mlp.com_ftp:1.1.1.1"
+     ]
+   },
+   {
+     "labels": {
+       "domain": "athome.mlp.com"
+     },
+     "targets": [
+       "mlp.com_athome:8.8.8.8",
+       "mlp.com_athome:1.1.1.1"
+     ]
+   },
+   {
+     "labels": {
+       "domain": "mail.mlp.com"
+     },
+    "targets": [
+       "mlp.com_mail:8.8.8.8",
+       "mlp.com_mail:1.1.1.1"
+       ]
+   }
+]
